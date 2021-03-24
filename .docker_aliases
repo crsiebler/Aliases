@@ -1,6 +1,21 @@
 # Docker aliases (shortcuts)
+dkclean() {
+  docker rm $(docker ps --all -q -f status=exited)
+}
+dke() {
+  docker exec -it $1 /bin/sh
+}
+dkexe() {
+  docker exec $1 $2
+}
 dkln() {
   docker logs -f `docker ps | grep $1 | awk '{print $1}'`
+}
+dkprune() {
+  docker system prune -af
+}
+dkrun() {
+  docker run it $1 $2
 }
 dkstats() {
   if [ $# -eq 0 ]; then
@@ -12,18 +27,25 @@ dkstats() {
 dktop() {
   docker stats --format "table {{.Container}}\t{{.Name}}\t{{.CPUPerc}}  {{.MemPerc}}\t{{.NetIO}}\t{{.BlockIO}}"
 }
+alias dcu="docker-compose up -d"
+alias dcd="docker-compose down"
+alias dcr="docker-compose run"
 alias dk='docker'
-alias dks='docker service'
-alias dm='docker-machine'
-alias dmx='docker-machine ssh' 
-alias dkpsa='docker ps -a --format "table {{.Names}}\t{{.Image}}\t{{.Status}}"'
-alias dkrm='docker rm -f'
-alias dkrmi='docker rmi'
-alias dkimg='docker image ls --format "table {{.Repository}}\t{{.Tag}}\t{{.ID}}" | sort'
-alias dkvlm='docker volume ls'
-alias dklgs='docker logs'
-alias dklgsf='docker logs -f'
-alias dkterm='docker exec -it'
+alias dki='docker images'
+alias dkif='docker image ls --format "table {{.Repository}}\t{{.Tag}}\t{{.ID}}"'
+alias dkis='docker image ls --format "table {{.Repository}}\t{{.Tag}}\t{{.ID}}" | grep -v REPOSITORY | sort'
+alias dkl='docker logs'
+alias dklf='docker logs -f'
 alias dkstrt='docker start'
+alias dkps="docker ps --format '{{.ID}} ~ {{.Names}} ~ {{.Status}} ~ {{.Image}}'"
+alias dkpsa='docker ps -a --format "table {{.Names}}\t{{.Image}}\t{{.Status}}"'
+alias dkpsas='docker ps -a --format "table {{.Names}}\t{{.Image}}\t{{.Status}}" | grep -v NAMES | sort'
+alias dkrm='docker rm'
+alias dkrmi='docker rmi'
+alias dks='docker service'
 alias dkstp='docker stop'
 alias dkstpall='docker stop $(docker ps -a -q)'
+alias dkv='docker volume'
+alias dkvls='docker volume'
+alias dm='docker-machine'
+alias dmx='docker-machine ssh' 
