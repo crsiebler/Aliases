@@ -7,3 +7,10 @@ fi
 if [ -f ~/.docker_aliases ]; then
 	. ~/.docker_aliases
 fi
+
+# Load common aliases
+if [ -f ~/.aliases ]; then
+	. ~/.aliases
+fi
+
+export JAVA_HOME=/usr/bin/java

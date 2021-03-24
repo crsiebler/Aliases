@@ -3,9 +3,10 @@ dkln() {
   docker logs -f `docker ps | grep $1 | awk '{print $1}'`
 }
 dkstats() {
-  if [ $# -eq 0 ]
-    then docker stats --no-stream;
-    else docker stats --no-stream | grep $1;
+  if [ $# -eq 0 ]; then
+    docker stats --no-stream;
+  else
+    docker stats --no-stream | grep $1;
   fi
 }
 dktop() {

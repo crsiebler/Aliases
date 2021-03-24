@@ -1,0 +1,7 @@
+ddg() {
+    if [ $# -eq 0 ]; then
+        brave-browser https://duckduckgo.com/\?q=$(xclip -o);
+    else
+        brave-browser https://duckduckgo.com\?q="$1";
+    fi
+}
