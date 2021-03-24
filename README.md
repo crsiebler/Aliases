@@ -1,5 +1,5 @@
 # dotfiles
-A collection of configuration files for storing user preferences or preserving the state of a utility, and are frequently created implicitly by using various utilities.
+A collection of configuration files for storing user preferences and preserving the state of a utility.
 
 ## Setting Up
 
