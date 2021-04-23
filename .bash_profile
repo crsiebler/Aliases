@@ -8,6 +8,11 @@ if [ -f ~/.docker_aliases ]; then
 	. ~/.docker_aliases
 fi
 
+# Load thie Symfony aliases
+if [ -f ~/.symfony_aliases ]; then
+	. ~/.symfony_aliases
+fi
+
 # Load common aliases
 if [ -f ~/.aliases ]; then
 	. ~/.aliases

@@ -30,5 +30,3 @@ ddg() {
         brave-browser https://duckduckgo.com\?q=$(urlencode $1);
     fi
 }
-
-alias rs='nohup symfony server -d && yarn dev-server | tee server_$(date +%Y%m%d_%H%M%S).log'
