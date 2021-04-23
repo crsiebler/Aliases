@@ -1,6 +1,7 @@
 alias sf='symfony bin/console'
 alias sfs='symfony serve -d'
 alias sfsl='symfony server:log'
+alias sfsstat='symfony server:status'
 alias sfss='symfony server:stop'
 alias sfcl='symfony console list'
 alias sfcdr='symfony console debug:router'
