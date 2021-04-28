@@ -1,4 +1,5 @@
 alias sf='symfony bin/console'
+alias sfa='symfony self:about'
 alias sfs='symfony serve -d'
 alias sfsl='symfony server:log'
 alias sfsstat='symfony server:status'
