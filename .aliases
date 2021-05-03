@@ -24,7 +24,7 @@
 #    printf '%b' "${url_encoded//%/\\x}"
 #}
 
-# This is replaced by the websearch ZSH plugin
+# This is replaced by the web-search ZSH plugin
 #ddg() {
 #    if [ $# -eq 0 ]; then
 #        brave-browser https://duckduckgo.com/\?q=$(urlencode "$(xclip -o)");
